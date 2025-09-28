@@ -1,0 +1,174 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(120deg, #f5f7fa, #c3cfe2);
+  padding: 20px;
+}
+.title {
+  display: flex;
+  justify-content: center;
+  margin: 15px;
+}
+.main-container {
+  display: flex;
+  gap: 40px;
+  width: 100%;
+  max-width: 1200px;
+  flex-wrap: wrap;
+}
+
+/* BMI Input Section */
+.container1 {
+  flex: 1;
+  min-width: 350px;
+}
+.values {
+  margin: 5px;
+}
+.input {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background-color: #ffffffcc;
+  padding: 25px 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.input label {
+  font-weight: 600;
+  color: #555;
+}
+
+input {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+input:focus {
+  border-color: #ff5722;
+  outline: none;
+  box-shadow: 0 0 5px #ff5722aa;
+}
+
+button {
+  padding: 12px;
+  background-color: #ff5722;
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #e64a19;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.output {
+  margin-top: 20px;
+  text-align: center;
+  background-color: #ffffffcc;
+  padding: 20px 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.output h2 {
+  color: #4caf50;
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.output h3 {
+  color: #ff5722;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+/* BMI History Section */
+.container2 {
+  flex: 1;
+  min-width: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container2 button {
+  margin-bottom: 15px;
+  background-color: #4caf50;
+}
+
+.container2 button:hover {
+  background-color: #388e3c;
+}
+
+.table-wrapper {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.header-table {
+  width: 100%;
+  table-layout: fixed;
+  background: #ff5722;
+  color: #fff;
+}
+
+.header-table th {
+  padding: 12px 15px;
+  text-align: center;
+}
+
+/* Scrollable body table */
+.table-scroll {
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+.body-table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+.body-table td {
+  padding: 12px 15px;
+  text-align: center;
+  border-bottom: 1px solid #ccc;
+}
+
+.body-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.body-table tr:hover {
+  background-color: #ffe0b2;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .main-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}

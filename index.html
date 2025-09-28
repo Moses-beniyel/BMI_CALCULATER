@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!DOCTYPE html>
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BMI Calculator</title>
+    <link rel="stylesheet" href="stylesheet.css" />
+  
+  </head>
+  <body>
+    <div>
+      <div class="title">
+        <h1>BMI CALCULATION</h1>
+      </div>
+      <div class="main-container">
+        <!-- BMI Input Section -->
+        <div class="container1">
+          <div class="values">
+            ENTER VALUES
+          </div>
+          <div class="input">
+            <label for="height">Height (in meters):</label>
+            <input
+              type="text"
+              id="height"
+              placeholder="Enter height in meters"
+            />
+
+            <label for="weight">Weight (in kg):</label>
+            <input type="text" id="weight" placeholder="Enter weight in kg" />
+
+            <button onclick="calculation()">Enter</button>
+          </div>
+
+          <div class="output">
+            <h2 id="bmiCalc"></h2>
+            <h3 id="status"></h3>
+            <h3 id="advice"></h3>
+          </div>
+        </div>
+
+        <!-- BMI History Section -->
+        <div class="container2">
+          <button onclick="loadRecords()">Show History</button>
+
+          <div class="table-wrapper">
+            <!-- Fixed Header Table -->
+            <table class="header-table">
+              <thead>
+                <tr>
+                  <th>S.NO</th>
+                  <th>Height</th>
+                  <th>Weight</th>
+                  <th>BMI</th>
+                  <th>Status</th>
+                 
+                </tr>
+              </thead>
+            </table>
+
+            <!-- Scrollable Body Table -->
+            <div class="table-scroll">
+              <table class="body-table">
+                <tbody id="records"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+  <script src="script.js"></script>
+  
+</html>
