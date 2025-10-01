@@ -5,7 +5,10 @@ function calculation() {
 
   height = document.getElementById("height").value;
   weight = document.getElementById("weight").value;
-  fetch(`http://127.0.0.1:8000/search?height=${height}&weight=${weight}`)
+  var name = document.getElementById("name").value;
+  fetch(
+    `https://bmi-api-1.onrender.com/search?height=${height}&weight=${weight}&name=${name}`
+  )
     .then((response) => response.json())
     .then((data) => {
       console.log(data);
@@ -28,14 +31,8 @@ function calculation() {
     .catch((error) => console.log("Error:", error));
 }
 
-fetch("http://127.0.0.1:8000/records")
-  .then((response) => response.json())
-  .then((data) => {
-    //console.log(data);
-  });
-
 function loadRecords() {
-  fetch("http://127.0.0.1:8000/records")
+  fetch("https://bmi-api-1.onrender.com/records")
     .then((res) => res.json())
     .then((data) => {
       console.log(data);
@@ -43,6 +40,7 @@ function loadRecords() {
       data.forEach((r) => {
         rows += `<tr>
           <td>${r.id}</td>
+          <td>${r.name}</td>
           <td>${r.height}</td>
           <td>${r.weight}</td>
           <td>${r.bmi}</td>
