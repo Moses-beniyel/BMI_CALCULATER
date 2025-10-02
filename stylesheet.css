@@ -166,9 +166,130 @@ button:hover {
 }
 
 /* Responsive */
+
+
+/* 📱 Mobile Phones (max-width: 767px) */
+@media (max-width: 767px) {
+  .intro-section {
+    flex-direction: column;
+    text-align: center;
+    height: auto;
+    padding: 2rem 1.5rem;
+    margin-top: 70px;
+  }
+
+  .desc {
+    padding: 0;
+  }
+
+  .profile-pic img {
+    width: 180px;
+    height: 180px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  h2 {
+    font-size: 1rem;
+  }
+
+  .intro-description {
+    font-size: 1rem;
+  }
+
+  .icon {
+    font-size: 1.4rem;
+  }
+}
 @media (max-width: 992px) {
   .main-container {
     flex-direction: column;
     align-items: center;
+  }
+}
+/* 📱 Tablets (max-width: 1023px) */
+@media (max-width: 1023px) {
+  .intro-section {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: auto;
+    padding: 2rem;
+    margin-top: 70px;
+  }
+
+  .desc {
+    padding: 0;
+    max-width: 90%;
+  }
+
+  .profile-pic img {
+    width: 220px;
+    height: 220px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  .intro-description {
+    font-size: 1.05rem;
+  }
+
+  .icon {
+    font-size: 1.6rem;
+  }
+  .contact-info{
+    justify-content: center;
+  }
+}
+
+/* 🖥️ Ultra-Wide Screens (min-width: 1600px) */
+@media (min-width: 1600px) {
+  .intro-section {
+    padding: 4rem 8rem;
+  }
+
+  .desc {
+    max-width: 700px;
+  }
+
+  .profile-pic img {
+    width: 320px;
+    height: 320px;
+  }
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+  }
+
+  .intro-description {
+    font-size: 1.25rem;
+  }
+
+  .icon {
+    font-size: 2rem;
+  }
+}
+@media(max-width:411px) {
+  .h2{
+    font-size:1.5rem;
+  }
+  .h1{
+    font-size:1.02rem;
+  }
+  p{
+    justify-content: center;
+    font-size: 1.005rem;
   }
 }

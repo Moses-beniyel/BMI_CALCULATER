@@ -13,7 +13,7 @@ function calculation() {
     .then((data) => {
       console.log(data);
       console.log(data.bmi);
-
+      
       if (data.bmi < 18.5) {
         a.innerHTML = `your bmi is ${data.bmi} `;
         b.innerHTML = `status: ${data.status}`;
