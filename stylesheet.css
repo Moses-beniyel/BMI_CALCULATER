@@ -164,132 +164,51 @@ button:hover {
 .body-table tr:hover {
   background-color: #ffe0b2;
 }
+/* Responsive Media Queries */
 
-/* Responsive */
-
-
-/* 📱 Mobile Phones (max-width: 767px) */
-@media (max-width: 767px) {
-  .intro-section {
-    flex-direction: column;
-    text-align: center;
-    height: auto;
-    padding: 2rem 1.5rem;
-    margin-top: 70px;
-  }
-
-  .desc {
-    padding: 0;
-  }
-
-  .profile-pic img {
-    width: 180px;
-    height: 180px;
-  }
-
-  h1 {
-    font-size: 1.8rem;
-  }
-
-  h2 {
-    font-size: 1rem;
-  }
-
-  .intro-description {
-    font-size: 1rem;
-  }
-
-  .icon {
-    font-size: 1.4rem;
-  }
-}
+/* Tablets (width <= 992px) */
 @media (max-width: 992px) {
   .main-container {
     flex-direction: column;
-    align-items: center;
+    gap: 30px;
   }
-}
-/* 📱 Tablets (max-width: 1023px) */
-@media (max-width: 1023px) {
-  .intro-section {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    height: auto;
-    padding: 2rem;
-    margin-top: 70px;
+  
+  .container1,
+  .container2 {
+    min-width: 100%;
   }
 
-  .desc {
-    padding: 0;
-    max-width: 90%;
-  }
-
-  .profile-pic img {
-    width: 220px;
-    height: 220px;
-  }
-
-  h1 {
-    font-size: 2rem;
-  }
-
-  h2 {
-    font-size: 1.2rem;
-  }
-
-  .intro-description {
-    font-size: 1.05rem;
-  }
-
-  .icon {
-    font-size: 1.6rem;
-  }
-  .contact-info{
-    justify-content: center;
+  .table-scroll {
+    max-height: 200px;
   }
 }
 
-/* 🖥️ Ultra-Wide Screens (min-width: 1600px) */
-@media (min-width: 1600px) {
-  .intro-section {
-    padding: 4rem 8rem;
+/* Mobile Devices (width <= 600px) */
+@media (max-width: 600px) {
+  body {
+    padding: 10px;
   }
 
-  .desc {
-    max-width: 700px;
+  .input {
+    padding: 20px 15px;
   }
 
-  .profile-pic img {
-    width: 320px;
-    height: 320px;
+  input, button {
+    font-size: 14px;
+    padding: 10px;
   }
 
-  h1 {
-    font-size: 3rem;
+  .output {
+    padding: 15px 20px;
   }
 
-  h2 {
-    font-size: 1.6rem;
+  .header-table th,
+  .body-table td {
+    padding: 8px 10px;
+    font-size: 14px;
   }
 
-  .intro-description {
-    font-size: 1.25rem;
-  }
-
-  .icon {
-    font-size: 2rem;
-  }
-}
-@media(max-width:411px) {
-  .h2{
-    font-size:1.5rem;
-  }
-  .h1{
-    font-size:1.02rem;
-  }
-  p{
-    justify-content: center;
-    font-size: 1.005rem;
+  .table-scroll {
+    max-height: 150px;
   }
 }
