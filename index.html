@@ -1,32 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-  <!DOCTYPE html>
-
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BMI Calculator</title>
     <link rel="stylesheet" href="stylesheet.css" />
-  
   </head>
+
   <body>
     <div>
       <div class="title">
-        <h1>BMI CALCULATION</h1>
+        <img
+          src="https://cdn-icons-png.flaticon.com/512/2965/2965877.png"
+          alt="BMI Icon"
+          class="logo"
+        />
+        <h1>BMI CALCULATOR</h1>
       </div>
+
       <div class="main-container">
         <!-- BMI Input Section -->
         <div class="container1">
-          <div class="values">
-            ENTER VALUES
-          </div>
+          <div class="values">ENTER VALUES</div>
+
           <div class="input">
             <label for="name">Name</label>
-            <input
-              type="textbox"
-              id="name"
-              placeholder="Enter your name"
-            />
+            <input type="textbox" id="name" placeholder="Enter your name" />
+
             <label for="height">Height (in meters):</label>
             <input
               type="text"
@@ -49,7 +49,13 @@
 
         <!-- BMI History Section -->
         <div class="container2">
-          <button onclick="loadRecords()">Show History</button>
+          <div class="history-header">
+            <h2>History</h2>
+            <div>
+              <button onclick="loadRecords()">Show History</button>
+              <button onclick="clearHistory()">Clear History</button>
+            </div>
+          </div>
 
           <div class="table-wrapper">
             <!-- Fixed Header Table -->
@@ -62,7 +68,6 @@
                   <th>Weight</th>
                   <th>BMI</th>
                   <th>Status</th>
-                 
                 </tr>
               </thead>
             </table>
@@ -78,8 +83,27 @@
       </div>
     </div>
 
+    <!-- Link Script -->
     <script src="script.js"></script>
+
+    <!-- Visual enhancement only (glow animation) -->
+    <script>
+      function visualEnhance() {
+        const bmiCalc = document.getElementById("bmiCalc");
+        bmiCalc.classList.add("result-glow");
+      }
+
+      // Run this whenever calculation() finishes
+      const oldCalc = window.calculation;
+      window.calculation = function () {
+        if (typeof oldCalc === "function") oldCalc();
+        visualEnhance();
+      };
+
+      function clearHistory() {
+        localStorage.removeItem("bmiRecords");
+        document.getElementById("records").innerHTML = "";
+      }
+    </script>
   </body>
-  <script src="script.js"></script>
-  
 </html>

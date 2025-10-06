@@ -1,214 +1,250 @@
+/* ===== GENERAL STYLING ===== */
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background: url("https://images.unsplash.com/photo-1594737625785-c84cdb6df6b1?auto=format&fit=crop&w=1920&q=80")
+    no-repeat center center/cover;
+  color: #fff;
   min-height: 100vh;
-  background: linear-gradient(120deg, #f5f7fa, #c3cfe2);
-  padding: 20px;
-}
-.title {
   display: flex;
   justify-content: center;
-  margin: 15px;
-}
-.main-container {
-  display: flex;
-  gap: 40px;
-  width: 100%;
-  max-width: 1200px;
-  flex-wrap: wrap;
+  padding: 30px 20px;
 }
 
-/* BMI Input Section */
-.container1 {
-  flex: 1;
-  min-width: 350px;
-}
-.values {
-  margin: 5px;
-}
-.input {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  background-color: #ffffffcc;
-  padding: 25px 30px;
-  border-radius: 15px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+/* ===== TITLE SECTION ===== */
+.title {
+  text-align: center;
   margin-bottom: 20px;
 }
 
-.input label {
+.title h1 {
+  font-size: 2.3rem;
+  color: #ff8c00;
+  text-shadow: 0 0 10px #ff8c00;
+}
+
+.logo {
+  width: 80px;
+  margin-bottom: 10px;
+  filter: drop-shadow(0 0 10px #ff8c00);
+}
+
+/* ===== MAIN LAYOUT ===== */
+.main-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 900px;
+  width: 100%;
+}
+
+/* ===== CARD STYLE ===== */
+.container1,
+.container2 {
+  background: rgba(20, 20, 20, 0.9);
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0 0 20px rgba(255, 140, 0, 0.3);
+  transition: 0.3s;
+}
+
+.container1:hover,
+.container2:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 30px rgba(255, 140, 0, 0.5);
+}
+
+/* ===== INPUT AREA ===== */
+.values {
+  text-align: center;
+  color: #ff8c00;
+  font-size: 1.3rem;
   font-weight: 600;
-  color: #555;
+  margin-bottom: 15px;
+}
+
+.input {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+label {
+  font-weight: 500;
+  color: #ccc;
 }
 
 input {
-  padding: 12px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  font-size: 16px;
-  transition: all 0.3s ease;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  background: #1e1e1e;
+  color: #fff;
+  outline: none;
+  transition: 0.3s;
 }
 
 input:focus {
-  border-color: #ff5722;
-  outline: none;
-  box-shadow: 0 0 5px #ff5722aa;
+  border: 2px solid #ff8c00;
+  box-shadow: 0 0 10px #ff8c00;
 }
 
 button {
-  padding: 12px;
-  background-color: #ff5722;
-  color: #fff;
-  font-weight: 600;
+  margin-top: 10px;
+  padding: 10px;
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
+  background: #ff8c00;
+  color: #000;
+  font-weight: bold;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: 0.3s;
 }
 
 button:hover {
-  background-color: #e64a19;
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  background: #ffa733;
+  transform: scale(1.05);
 }
 
+/* ===== OUTPUT AREA ===== */
 .output {
-  margin-top: 20px;
   text-align: center;
-  background-color: #ffffffcc;
-  padding: 20px 30px;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
 }
 
-.output h2 {
-  color: #4caf50;
-  font-size: 22px;
+#bmiCalc {
+  font-size: 2rem;
+  color: #ff8c00;
+  animation: fadeIn 0.8s ease;
+}
+
+#status {
+  color: #00ffb3;
+  margin-top: 5px;
+}
+
+#advice {
+  color: #ccc;
+  font-style: italic;
+}
+
+/* ===== GLOW EFFECT ===== */
+.result-glow {
+  animation: glowPulse 1.2s ease-in-out infinite alternate;
+}
+
+@keyframes glowPulse {
+  from {
+    text-shadow: 0 0 10px #ff8c00;
+  }
+  to {
+    text-shadow: 0 0 30px #ff8c00, 0 0 50px #ffa733;
+  }
+}
+
+/* ===== BMI BAR ===== */
+.bmi-bar {
+  width: 100%;
+  height: 18px;
+  margin-top: 20px;
+  background: linear-gradient(
+    to right,
+    #00bfff 0% 18.5%,
+    #00ff88 18.5% 25%,
+    #ffae00 25% 30%,
+    #ff4444 30% 40%
+  );
+  border-radius: 10px;
+  position: relative;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+}
+
+#indicator {
+  width: 5px;
+  height: 100%;
+  background: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 5px;
+  transition: left 0.6s ease;
+}
+
+/* ===== HISTORY SECTION ===== */
+.history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 10px;
 }
 
-.output h3 {
-  color: #ff5722;
-  font-size: 18px;
-  margin-bottom: 5px;
-}
-
-/* BMI History Section */
-.container2 {
-  flex: 1;
-  min-width: 350px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.container2 button {
-  margin-bottom: 15px;
-  background-color: #4caf50;
-}
-
-.container2 button:hover {
-  background-color: #388e3c;
-}
-
 .table-wrapper {
-  width: 100%;
-  border-radius: 12px;
+  border-radius: 10px;
+  background: #111;
   overflow: hidden;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
 .header-table {
   width: 100%;
-  table-layout: fixed;
-  background: #ff5722;
-  color: #fff;
+  border-collapse: collapse;
 }
 
 .header-table th {
-  padding: 12px 15px;
+  background: #ff8c00;
+  color: #000;
+  padding: 10px;
   text-align: center;
 }
 
-/* Scrollable body table */
 .table-scroll {
-  max-height: 250px;
+  max-height: 180px;
   overflow-y: auto;
 }
 
 .body-table {
   width: 100%;
-  table-layout: fixed;
   border-collapse: collapse;
 }
 
 .body-table td {
-  padding: 12px 15px;
   text-align: center;
-  border-bottom: 1px solid #ccc;
+  padding: 10px;
+  border-bottom: 1px solid #333;
+  animation: fadeIn 0.4s ease;
 }
 
 .body-table tr:nth-child(even) {
-  background-color: #f2f2f2;
+  background: #1b1b1b;
 }
 
 .body-table tr:hover {
-  background-color: #ffe0b2;
-}
-/* Responsive Media Queries */
-
-/* Tablets (width <= 992px) */
-@media (max-width: 992px) {
-  .main-container {
-    flex-direction: column;
-    gap: 30px;
-  }
-  
-  .container1,
-  .container2 {
-    min-width: 100%;
-  }
-
-  .table-scroll {
-    max-height: 200px;
-  }
+  background: #282828;
+  color: #ff8c00;
 }
 
-/* Mobile Devices (width <= 600px) */
-@media (max-width: 600px) {
-  body {
-    padding: 10px;
-  }
+/* ===== SCROLLBAR ===== */
+.table-scroll::-webkit-scrollbar {
+  width: 8px;
+}
 
-  .input {
-    padding: 20px 15px;
-  }
+.table-scroll::-webkit-scrollbar-thumb {
+  background: #ff8c00;
+  border-radius: 10px;
+}
 
-  input, button {
-    font-size: 14px;
-    padding: 10px;
+/* ===== FADE-IN ANIMATION ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
   }
-
-  .output {
-    padding: 15px 20px;
-  }
-
-  .header-table th,
-  .body-table td {
-    padding: 8px 10px;
-    font-size: 14px;
-  }
-
-  .table-scroll {
-    max-height: 150px;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
